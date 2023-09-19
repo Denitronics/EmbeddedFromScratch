@@ -2,11 +2,8 @@ set(EXECUTABLE ${PROJECT_NAME}.elf)
 
 add_executable(${EXECUTABLE} 
     main.c
-    stm32f4xx_it.c
-    stm32f4xx_hal_msp.c
     #syscalls.c
     #sysmem.c
-    system_stm32f4xx.c
     startup_stm32f429zitx.s
 )
 
