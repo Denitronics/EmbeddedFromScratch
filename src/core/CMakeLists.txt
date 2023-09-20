@@ -2,8 +2,8 @@ set(EXECUTABLE ${PROJECT_NAME}.elf)
 
 add_executable(${EXECUTABLE} 
     main.c
-    #syscalls.c
-    #sysmem.c
+    syscalls.c
+    sysmem.c
     startup_stm32f429zitx.s
 )
 
