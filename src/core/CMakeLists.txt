@@ -18,33 +18,6 @@ target_compile_definitions(${EXECUTABLE}
     -DSTM32F429xx
 )
 
-target_compile_options(${EXECUTABLE}
-  PRIVATE
-    -mcpu=cortex-m4
-    -mthumb
-    -mfpu=fpv4-sp-d16
-    -mfloat-abi=hard
-    -fdata-sections
-    -ffunction-sections
-    -Wall
-    -specs=nano.specs
-    $<$<CONFIG:Debug>:-Og>
-)
-
-target_link_options(${EXECUTABLE} PUBLIC
-  -T${CMAKE_SOURCE_DIR}/config/LinkerScript/STM32F429ZITX_FLASH.ld
-  -mcpu=cortex-m4
-  -mthumb
-  -mfpu=fpv4-sp-d16
-  -mfloat-abi=hard
-  -specs=nosys.specs
-  -lc
-  -lm
-  -lnosys
-  -Wl,-Map=${PROJECT_NAME}.map,--cref
-  -Wl,--gc-sections
-)
-
 # Print executable size
 add_custom_command(TARGET ${EXECUTABLE}
         POST_BUILD

@@ -33,30 +33,3 @@ target_include_directories(${LIBRARY_NAME}
     ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/include/CMSIS
 )
-
-target_compile_options(${LIBRARY_NAME}
-  PRIVATE
-    -mcpu=cortex-m4
-    -mthumb
-    -mfpu=fpv4-sp-d16
-    -mfloat-abi=hard
-    -fdata-sections
-    -ffunction-sections
-    -Wall
-    -specs=nano.specs
-    $<$<CONFIG:Debug>:-Og>
-)
-
-target_link_options(${LIBRARY_NAME} PUBLIC
-  -T${CMAKE_SOURCE_DIR}/config/LinkerScript/STM32F429ZITX_FLASH.ld
-  -mcpu=cortex-m4
-  -mthumb
-  -mfpu=fpv4-sp-d16
-  -mfloat-abi=hard
-  -specs=nosys.specs
-  -lc
-  -lm
-  -lnosys
-  -Wl,-Map=${PROJECT_NAME}.map,--cref
-  -Wl,--gc-sections
-)
