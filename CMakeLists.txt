@@ -8,5 +8,5 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
-add_subdirectory(hal)
+add_subdirectory(modules)
 add_subdirectory(src)
