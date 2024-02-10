@@ -35,7 +35,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_C_FLAGS "-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -ffunction-sections -fdata-sections -Wall -Werror -specs=\"nano.specs\"")
 
 # Setup debug configuration specific compiler flags
-set(CMAKE_C_FLAGS_DEBUG "-Og")
+set(CMAKE_C_FLAGS_DEBUG "-g3")
 
 # Setup linker flags
 set(CMAKE_EXE_LINKER_FLAGS "-mcpu=cortex-m4 -T${CMAKE_SOURCE_DIR}/config/LinkerScript/STM32F429ZITX_FLASH.ld -Wl,--gc-sections -static -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -lc -lm -Wl,-Map=\"${PROJECT_NAME}.map\"")
