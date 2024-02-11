@@ -1,9 +1,12 @@
 set(EXECUTABLE ${PROJECT_NAME}.elf)
 
+set(STARTUP_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/startup.s
+    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/stm32_it.c)
+
 add_executable(${EXECUTABLE} 
     main.c
-    stm32f4xx_it.c
-    startup_stm32f429zitx.s
+    ${STARTUP_FILES} 
 )
 
 target_link_libraries(${EXECUTABLE}
@@ -14,7 +17,7 @@ target_link_libraries(${EXECUTABLE}
 target_compile_definitions(${EXECUTABLE}
   PRIVATE
     -DUSE_HAL_DRIVER
-    -DSTM32F429xx
+    -D${HW_MODEL}xx
 )
 
 # Print executable size

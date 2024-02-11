@@ -1,5 +1,6 @@
 @ECHO OFF
 
+:: Under reconstruction!!!
 :: Shell script for building the STM32 based project using CMake and ninja.
 :: It has to be executed in the main project dir
 
