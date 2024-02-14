@@ -38,4 +38,4 @@ set(CMAKE_C_FLAGS "-mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=hard -f
 set(CMAKE_C_FLAGS_DEBUG "-g3")
 
 # Setup linker flags
-set(CMAKE_EXE_LINKER_FLAGS "-mcpu=cortex-m4 -T${CMAKE_SOURCE_DIR}/config/LinkerScript/${HW_MODEL}/STM32F429ZITX_FLASH.ld -Wl,--gc-sections -static -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -lc -lm -Wl,-Map=\"${PROJECT_NAME}.map\"")
+set(CMAKE_EXE_LINKER_FLAGS "-mcpu=cortex-m4 -T${CMAKE_SOURCE_DIR}/config/LinkerScript/${HW_MODEL}/STM32F429.ld -Wl,--gc-sections -static -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -lc -lm -Wl,-Map=\"${PROJECT_NAME}.map\"")
