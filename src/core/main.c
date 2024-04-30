@@ -20,7 +20,6 @@ int main (void) {
   /* Infinite loop */
   while (1)
   {
-    HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_13);
     HAL_GPIO_TogglePin(GPIOG, GPIO_PIN_14);
     HAL_Delay(500);
     /* USER CODE END WHILE */
