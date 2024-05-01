@@ -4,7 +4,7 @@ control to the application, if there is such. Indication that the MCU is in boot
 of the LED connected to pin PG14.
 
 ## Setup
-Clock - 180 MHz
-PG13 - LED 1
+Clock - 180 MHz\
+PG13 - LED 1\
 PG14 - LED 2
 
