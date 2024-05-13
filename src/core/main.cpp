@@ -9,9 +9,9 @@ int main (void) {
 
   /* Configure the system clock */
   SystemClock_Config();
-
-  Led green_led{GPIOG, GPIO_PIN_13};
-  Led red_led{GPIOG, GPIO_PIN_14};
+  
+  bsp::Led green_led{GPIOG, GPIO_PIN_13};
+  bsp::Led red_led{GPIOG, GPIO_PIN_14};
 
   /* Infinite loop */
   while (1)

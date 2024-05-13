@@ -2,10 +2,10 @@
 
 #include "stm32f4xx_hal.h"
 
+namespace bsp {
+  class Led {
 
-class Led {
-
-public:
+  public:
     /**
      * @brief Class constructor
      * @param GPIOx - port of the GPIO pin
@@ -25,12 +25,13 @@ public:
     /// @brief Turn the LED off
     void turnOff() const;
 
-private:
+  private:
     // Pointer to a gpio port
     GPIO_TypeDef* gpioPort{nullptr};
 
     // GPIO pin number
     uint16_t gpioPin{0};
-};
+  };
+}
 
 #endif // LED_HPP
