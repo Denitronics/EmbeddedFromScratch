@@ -2,10 +2,11 @@ set(EXECUTABLE ${PROJECT_NAME}.elf)
 
 set(STARTUP_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/startup.s
-    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/stm32_it.c)
+    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/stm32_it.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/syscalls.c)
 
 add_executable(${EXECUTABLE} 
-    main.c
+    main.cpp
     ${STARTUP_FILES} 
 )
 
