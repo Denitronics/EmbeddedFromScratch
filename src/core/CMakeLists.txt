@@ -3,7 +3,8 @@ set(EXECUTABLE ${PROJECT_NAME}.elf)
 set(STARTUP_FILES
     ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/startup.s
     ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/stm32_it.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/syscalls.c)
+    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/syscalls.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/${HW_MODEL}/sysmem.c)
 
 add_executable(${EXECUTABLE} 
     main.cpp
@@ -13,6 +14,7 @@ add_executable(${EXECUTABLE}
 target_link_libraries(${EXECUTABLE}
   PUBLIC
     hal
+    led
 )
 
 target_compile_definitions(${EXECUTABLE}
