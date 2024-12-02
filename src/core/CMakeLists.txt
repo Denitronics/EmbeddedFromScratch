@@ -15,6 +15,8 @@ target_link_libraries(${EXECUTABLE}
   PUBLIC
     hal
     led
+    logger
+    serial
 )
 
 target_compile_definitions(${EXECUTABLE}

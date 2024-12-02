@@ -1,4 +1,5 @@
 #ifndef LED_HPP
+#define LED_HPP
 
 #include "stm32f4xx_hal.h"
 

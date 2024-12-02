@@ -22,12 +22,20 @@ set(HAL_SOURCES
     ${HAL_SRC_PATH}/stm32f4xx_hal_rcc_ex.c
     ${HAL_SRC_PATH}/stm32f4xx_hal_rcc.c
     ${HAL_SRC_PATH}/stm32f4xx_hal.c
+    ${HAL_SRC_PATH}/stm32f4xx_hal_gpio.c
+    ${HAL_SRC_PATH}/stm32f4xx_hal_exti.c
+    ${HAL_SRC_PATH}/stm32f4xx_hal_uart.c
+    ${HAL_SRC_PATH}/stm32f4xx_hal_usart.c
     ${HAL_CONFIG_PATH}/system_stm32f4xx.c
   )
 
 add_library(${LIBRARY_NAME}
   ${HAL_SOURCES}
 )
+
+target_compile_definitions(${LIBRARY_NAME}
+ PUBLIC
+ HAL_UART_MODULE_ENABLED)
 
 target_include_directories(${LIBRARY_NAME}
   PUBLIC

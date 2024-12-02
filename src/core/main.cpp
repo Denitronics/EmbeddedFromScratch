@@ -1,5 +1,7 @@
 #include "stm32f4xx_hal.h"
 #include "led.hpp"
+#include "logger.h"
+#include "serial.hpp"
 
 int main (void) {  
   /* MCU Configuration--------------------------------------------------------*/
@@ -11,14 +13,14 @@ int main (void) {
   SystemClock_Config();
   
   bsp::Led green_led{GPIOG, GPIO_PIN_13};
-  bsp::Led red_led{GPIOG, GPIO_PIN_14};
+  bsp::Serial serial{115200};
 
   /* Infinite loop */
   while (1)
   {
     green_led.toggle();
-    red_led.toggle();
-    HAL_Delay(500);
+    HAL_Delay(1000);
+    serial.write("Test!\n\r", 8);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
